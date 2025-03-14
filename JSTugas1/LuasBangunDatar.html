@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Luas Bangun Datar</title>
+</head>
+<body>
+    <h1>Menghitung Luas Bangun Datar</h1>
+
+    <h4>Persegi panjang</h4>
+    <input type="number" id="panjang" />
+    <input type="number" id="lebar" />
+    <button onclick="hitungPP()">Hitung Luas</button>
+    <p id="hasilPP"></p>
+    <hr>
+
+    <h4>Bujur Sangkar</h4>
+    <input type="number" id="sisi" />
+    <button onclick="hitungBJ()">Hitung Luas</button>
+    <p id="hasilBJ"></p>
+    <hr>
+
+    <h4>Segitiga</h4>
+    <input type="number" id="alas" />
+    <input type="number" id="tinggi" />
+    <button onclick="hitungST()">Hitung Luas</button>
+    <p id="hasilST"></p>
+
+    <script>
+        // ini fungsi buat luas persegi panjang
+        function luasPersegiPanjang(panjang, lebar){
+            return panjang * lebar;
+        }
+
+        // ini fungsi buat luas bujur sangkar
+        function luasBujurSangkar(sisi) {
+            return sisi * sisi;
+        }
+
+        // ini fungsi buat luas segitiga
+        function luasSegitiga(alas, tinggi) {
+            return 0.5 * alas * tinggi;
+        }
+
+        // fungsi menangkap input dan menghitung
+        function hitungPP() {
+            const panjang = parseFloat(document.getElementById('panjang').value);
+            const lebar = parseFloat(document.getElementById('lebar').value);
+            hasil = luasPersegiPanjang(panjang, lebar);
+            document.getElementById('hasilPP').innerText = `Luas: ${hasil}`;
+        }
+
+        function hitungBJ() {
+            const sisi = parseFloat(document.getElementById('sisi').value);
+            hasil = luasBujurSangkar(sisi);
+            document.getElementById('hasilBJ').innerText = `Luas: ${hasil}`;
+        }
+
+        function hitungST() {
+            const alas = parseFloat(document.getElementById('alas').value);
+            const tinggi = parseFloat(document.getElementById('tinggi').value);
+            hasil = luasSegitiga(alas, tinggi);
+            document.getElementById('hasilST').innerText = `Luas: ${hasil}`;
+        }
+
+    </script>
+</body>
+</html>
